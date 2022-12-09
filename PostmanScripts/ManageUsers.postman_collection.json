@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "0d4df4ee-a1aa-4bde-8548-2dfdb30d20a2",
+		"name": "ManageUsers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UserDetail",
+			"item": [
+				{
+					"name": "UpdateUser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"empid\": \"125\",\n    \"title\": \"Mr\",\n    \"firstn\": \"Vicky\",\n    \"lastname\": \"Kumar\",\n    \"gender\": \"Male\",\n    \"address\": {\n        \"street\": \"22 Creane\",\n        \"city\": \"Sydney\",\n        \"state\": \"NSW\",\n        \"postcode\": 128366\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/updateuser",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"updateuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read UserDetails",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "nonadmin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "nonadmin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Harry Potter\",\n    \"birthDate\": \"1980-07-31\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/userdetails/120",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"userdetails",
+								"120"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"empid\": \"128\",\r\n    \"title\": \"Mr\",\r\n    \"firstn\": \"Kelly\",\r\n    \"lastname\": \"534\",\r\n    \"gender\": \"Male\",\r\n    \"address\": {\r\n        \"street\": \"1 Buster Street\",\r\n        \"city\": \"Melbourne\",\r\n        \"state\": \"Vic\",\r\n        \"postcode\": 327892\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/adduser",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"adduser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
